@@ -27,7 +27,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&family=Zen+Kaku+Gothic+Antique&display=swap');
 
-body {
+* {
     font-family: 'Work Sans'; // Replace 'YourChosenFont' with the name of the font you want to use
   }
 .center-col
@@ -49,5 +49,5 @@ ion-button
   text-transform: none;
 }
 img{
-    max-width: none; 
+    max-width: none;
 }
