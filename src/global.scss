@@ -24,3 +24,30 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&family=Zen+Kaku+Gothic+Antique&display=swap');
+
+body {
+    font-family: 'Work Sans'; // Replace 'YourChosenFont' with the name of the font you want to use
+  }
+.center-col
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-button
+{
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  --border-radius:50px;
+  --box-shadow: none;
+  text-transform: none;
+}
+img{
+    max-width: none;
+}
