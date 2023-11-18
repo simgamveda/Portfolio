@@ -1,23 +1,33 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { AboutComponent } from './about/about.component';
-
+import { ContactComponent } from './contact/contact.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MyHeroesComponent } from './my-heroes/my-heroes.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
   ],
   declarations: [
     HomePage,
-    AboutComponent
+    AboutComponent,
+    ContactComponent,
+    FooterComponent,
+    MyHeroesComponent
   ]
 })
 export class HomePageModule {}

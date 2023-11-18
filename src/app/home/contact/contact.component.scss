@@ -1,0 +1,184 @@
+.background {
+  background-color: var(--ion-color-primary);
+  // height: 650px;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-div {
+  border-radius: 786px;
+  width: 786px;
+  height: 786px;
+  border: 80px solid rgba(255, 255, 255, 0.05);
+  background: #07F;
+  position: absolute;
+  right: -20%;
+  overflow: hidden;
+}
+
+.background-small-div {
+  border-radius: 224px;
+  width: 224px;
+  height: 224px;
+  border: 40px solid rgba(255, 255, 255, 0.05);
+  background: #07F;
+  position: absolute;
+  left: -20%;
+  bottom: -10%;
+}
+
+.heading {
+  color: #E9EFFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.main-heading {
+  color: #FFF;
+  text-align: center;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 50px;
+  /* 100% */
+}
+
+.address {
+  border-radius: 15px;
+  background: #FFF;
+}
+
+.address-heading {
+  color: #333;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  /* 125% */
+}
+
+.mobile-number {
+  color: #333;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.sub-heading {
+  color: #333;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  /* 162.5% */
+}
+
+.normal-text {
+  color: #333;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.label-float {
+  position: relative;
+  padding-top: 13px;
+  width: 100%;
+}
+
+.label-float input,
+.label-float textarea {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  outline: none;
+  // min-width: 250px;
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  transition: all .1s linear;
+  -webkit-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+}
+
+.label-float input:focus,
+.label-float textarea:focus {
+  border: 2px solid #3951b2;
+}
+
+.label-float input::placeholder,
+.label-float textarea::placeholder {
+  color: transparent;
+}
+
+.label-float label {
+  pointer-events: none;
+  position: absolute;
+  top: calc(50% - 8px);
+  left: 15px;
+  transition: all .1s linear;
+  -webkit-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+  background-color: white;
+  padding: 5px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.label-float input.visited:required:invalid+label,
+.label-float textarea:required:invalid+label {
+  color: red;
+}
+
+.label-float input.visited:required:invalid,
+.label-float textarea.visited:required:invalid {
+  border: 2px solid red;
+}
+
+.label-float input:required:invalid+label::after,
+.label-float textarea:required:invalid+label::after {
+  content: '*';
+}
+
+.label-float input:focus+label,
+.label-float input:not(:placeholder-shown)+label,
+.label-float textarea:focus+label,
+.label-float textarea:not(:placeholder-shown)+label {
+  font-size: 13px;
+  top: 0;
+  color: #3951b2;
+}
+
+textarea {
+  resize: none;
+}
+
+.terms-text {
+  color: #E9EFFF;
+  font-family: Work Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+
+  /* 100% */
+  a {
+    color: #E9EFFF;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.card-section-2 {
+  background: url('../../../assets/icon/contactCard.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  margin-right: 15px;
+
+}

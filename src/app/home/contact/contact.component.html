@@ -1,0 +1,157 @@
+<ion-grid class="background ion-padding">
+  <div class="background-div">
+  </div>
+  <ion-row class="ion-padding ion-align-items-center ion-justify-content-center">
+    <ion-col>
+      <ion-row class="heading ion-justify-content-center">
+        Contact Me
+      </ion-row>
+      <ion-row class="main-heading ion-justify-content-center" style="margin-top: 24px;">
+        Feel free to Contact
+      </ion-row>
+      <ion-row class="ion-padding ion-justify-content-center" style="margin-top: 70px;gap: 10px;">
+        <ion-col class="address ion-no-padding" sizeLg="5" sizeMd="10" size="12">
+          <ion-row style="height: 100%;">
+            <ion-col class="ion-padding" size="7">
+              <ion-row class="ion-padding-horizontal ion-padding-top address-heading">
+                Veda Prakash
+              </ion-row>
+              <ion-row class="ion-padding-horizontal normal-text">
+                Software Developer
+              </ion-row>
+              <ion-row class="ion-padding-vertical">
+                <ion-col class="ion-padding">
+                  <ion-row>
+                    <ion-col size="auto">
+                      <ion-icon name="call-outline" size="small"></ion-icon>
+                    </ion-col>
+                    <ion-col offset="0.1" class="sub-heading ion-text-wrap">
+                      +91 9121920760
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="auto">
+                      <ion-icon name="mail-open-outline" size="small"></ion-icon>
+                    </ion-col>
+                    <ion-col offset="0.1" class="sub-heading ion-text-wrap">
+                      <a href="mailto:vedaprakashiiit@gmail.com">{{'vedaprakashiiit@gmail.com'}}</a>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="auto">
+                      <ion-icon name="location-outline" size="small"></ion-icon>
+                    </ion-col>
+                    <ion-col offset="0.1" class="sub-heading ion-text-wrap">
+                      3-46A, Penumur(M), Chittoor(Dist), Andhra Pradesh, India. PINCODE-517126
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col class="card-section-2">
+              <ion-row class="ion-align-items-end ion-justify-content-center ion-padding">
+                <ion-col class="ion-padding">
+                  <ion-row style="color: white;font-weight: 700;font-size: 20px;">
+                    <ion-col class="ion-text-center">
+                      Creanton
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="color: #fAFAFA;font-weight: 400;font-size: 14px;">
+                    <ion-col class="ion-text-center">
+                      Keep Smile
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <div
+              style="height: 100%;position: absolute;width: 35px;background-color: #00489A;right: 0;border-radius: 15px;">
+
+            </div>
+          </ion-row>
+        </ion-col>
+
+        <ion-col sizeLg="5" sizeMd="10" size="12" class="" style="background-color: white; border-radius: 15px;">
+          <form [formGroup]="contactForm">
+            <ion-row>
+              <ion-col>
+                <div class="label-float">
+                  <input type="text" placeholder="Name" formControlName="name" [class.visited]="contactForm.value.name"
+                    required />
+                  <label>Name</label>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div class="label-float">
+                  <input type="email" placeholder="Email Address" [class.visited]="contactForm.value.email"
+                    formControlName="email" required />
+                  <label>Email Address</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div class="label-float">
+                  <input type="text" placeholder="Subject" formControlName="subject" />
+                  <label>Subject</label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div class="label-float">
+                  <textarea cols="3" formControlName="description" placeholder="How can i help you?">
+
+                     </textarea>
+                  <label>How can i help you?</label>
+                </div>
+              </ion-col>
+            </ion-row>
+          </form>
+
+        </ion-col>
+
+      </ion-row>
+      <ion-row class="ion-padding-horizontal ion-justify-content-center" style="gap: 10px;">
+        <ion-col sizeLg="5" sizeMd="10" size="12">
+
+        </ion-col>
+        <ion-col sizeLg="5" sizeMd="10" size="12" class="">
+          <ion-row>
+            <ion-col size="auto">
+              <input type="checkbox" [formControl]="terms">
+            </ion-col>
+            <ion-col class="terms-text">
+              By submitting, i'm agreed to the <a>Terms & Conditons</a>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-button [ngStyle]="{'--background':submitted?'green':'#00489A'}"
+              (click)="!submitted && submit()">{{submitted?'Done':'Request Now'}}</ion-button>
+          </ion-row>
+
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+<!-- <ion-row class="address-heading">
+  Mobile Number 24/7
+</ion-row>
+<ion-row class="mobile-number ion-margin-bottom">
+  +91 9121920760
+</ion-row>
+<ion-row>
+  <ion-col size="auto" class="sub-heading">Address:</ion-col>
+  <ion-col class="normal-text">3-46A , Kotharoad Indlu(V), Penumur(M),Chittoor(D),AP,India.</ion-col>
+</ion-row>
+<ion-row>
+  <ion-col size="auto" class="sub-heading">Mail:</ion-col>
+  <ion-col class="normal-text"><a href="mailto:vedaprakashiiit@gmail.com">{{'vedaprakashiiit@gmail.com'}}</a></ion-col>
+</ion-row>
+<ion-row>
+  <ion-col size="auto" class="sub-heading">Available:</ion-col>
+  <ion-col class="normal-text">Mon - Sat : 10AM -6PM</ion-col>
+</ion-row> -->

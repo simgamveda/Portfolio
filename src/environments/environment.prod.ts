@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  firebaseURL:"https://login-1fe0f-default-rtdb.firebaseio.com/"
 };

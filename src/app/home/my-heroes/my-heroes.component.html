@@ -1,0 +1,62 @@
+<ion-grid class="ion-padding">
+  <ion-row class="ion-padding">
+    <ion-col>
+      <ion-row class="ion-align-items-center ion-justify-content-center">
+        <ion-col>
+          <ion-row class="header-text ion-text-center ion-justify-content-center">
+            <ion-col size="auto">
+              My Heroes
+            </ion-col>
+          </ion-row>
+          <ion-row class="main-text ion-text-center ion-justify-content-center">
+            <ion-col size="auto">
+              Guiding Lights and Role Models
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin ion-justify-content-center">
+        <ion-col size="auto">
+          <div class="arrows" [ngClass]="{'current':!forwardArrow}" (click)="scrollCards(false)">
+            <ion-icon name="arrow-back"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="auto">
+          <div class="arrows" [ngClass]="{'current':forwardArrow}" (click)="scrollCards(true)">
+            <ion-icon name="arrow-forward"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="role-models">
+        <!-- <div class="card"> -->
+        <!-- <ion-scroll scrollX="true" style="white-space: nowrap;"> -->
+        <div class="card" *ngFor="let data of heroesDetails" id="card_{{data.id}}"
+          [ngClass]="{'current-card':data.id==currentCard.id}">
+          <ion-row class="ion-align-items-center ion-justify-content-center">
+            <ion-col size="auto">
+              <div class="image-div">
+                <img src="../../../assets/icon/{{data.img}}" width="100%" height="100%" style="border-radius: 150px;">
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="description ion-padding ion-text-center ion-margin-vertical">
+            {{data.quote}}
+          </ion-row>
+          <ion-row class="author ion-text-center ion-justify-content-end">
+            <ion-col size="auto">
+              {{data.name}}
+            </ion-col>
+          </ion-row>
+          <ion-row class="author-role ion-text-center ion-justify-content-end">
+            <ion-col size="auto">
+              {{data.role}}
+            </ion-col>
+          </ion-row>
+        </div>
+        <!-- </ion-scroll> -->
+
+        <!-- </div> -->
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-grid>

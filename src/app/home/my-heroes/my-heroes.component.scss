@@ -1,0 +1,135 @@
+.header-text {
+    color: #0078FF;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.main-text {
+    color: #222;
+    text-align: center;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px;
+    /* 100% */
+}
+
+.card {
+    border-radius: 15px;
+    border: 1px solid #DDD;
+    background: #FFF;
+    width: 297px;
+    height: 467px;
+    padding: 30px 20px;
+    flex-shrink: 0;
+}
+
+.description {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 125% */
+    height: 152px;
+}
+
+.author {
+    color: #000;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.author-role {
+    color: #666;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.role-models {
+    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    // animation: move 40s linear alternate infinite;
+}
+
+@keyframes move {
+
+    // to { transform: translateX(-100%); }
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-30%);
+    }
+
+}
+
+.arrows {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid var(--ion-color-primary);
+    background: #FFF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ion-icon {
+        height: 30px;
+        width: 40px;
+        color: var(--ion-color-primary);
+    }
+}
+
+.current {
+    background-color: var(--ion-color-primary);
+
+    ion-icon {
+        color: white;
+    }
+}
+
+.current-card {
+    background-color: var(--ion-color-primary);
+    color: white;
+
+    .description,
+    .author,
+    .author-role {
+        color: white;
+    }
+
+    .image-div {
+        animation: mymove 5s infinite;
+    }
+}
+
+@keyframes mymove {
+    50% {
+        box-shadow: 0px 0px 50px #07F
+    }
+}
+
+.image-div {
+    border-radius: 150px;
+    height: 152px;
+    width: 152px;
+    box-shadow: 0px 0px 50px white
+}

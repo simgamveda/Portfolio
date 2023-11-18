@@ -1,18 +1,21 @@
 <ion-grid class="ion-padding" id="about">
   <ion-row class="ion-padding ion-align-items-center ion-justify-content-center">
-    <ion-col class="ion-padding-start">
+    <ion-col class="ion-padding-start" style="display: flex;justify-content: center;">
       <!-- <div class="my-image"> -->
-        <img src="../../assets/icon/profilePhoto.png" height="535px" width="550px">
+      <img src="../../../assets/icon/aboutIcon.svg" width="535px" class="mobile-image">
       <!-- </div> -->
     </ion-col>
     <ion-col class="ion-padding">
       <ion-row class="header-sub-text">About Me</ion-row>
-      <ion-row class="main-text-blue">2.5 Year's Experience</ion-row>
+      <ion-row class="main-text-blue">1.5 Year's Experience</ion-row>
       <ion-row class="main-text-black">on Web Development</ion-row>
-      <ion-row class="sub-text">Hello there! I'm  Veda Prakash Simgam. I specialize in web development, and I'm deeply passionate and committed to my craft. With 2.5 years of experience as a Web Developer</ion-row>
+      <ion-row class="sub-text">Hello there! I'm Veda Prakash Simgam. I specialize in web development, and I'm deeply
+        passionate and committed to my craft. With 2.5 years of experience as a Web Developer</ion-row>
       <ion-row class="buttons-group">
-        <ion-col size="auto"*ngFor="let tab of tabs">
-          <ion-button [fill]="currentTab.value==tab.value?'solid':'outline'" [ngClass]="{'inactive-button':currentTab.value!=tab.value}" (click)="currentTab=tab">{{tab?.name}}</ion-button>
+        <ion-col size="auto" *ngFor="let tab of tabs">
+          <ion-button [fill]="currentTab.value==tab.value?'solid':'outline'"
+            [ngClass]="{'inactive-button':currentTab.value!=tab.value}"
+            (click)="currentTab=tab">{{tab?.name}}</ion-button>
         </ion-col>
         <!-- <ion-col size="auto">
           <ion-button fill="outline" class="inactive-button">Awards</ion-button>
@@ -55,61 +58,61 @@
           </ion-row>
         </ng-container>
         <ng-container *ngSwitchCase="'certificates'">
-         <ion-row class="ion-margin-vertical" *ngFor="let certificate of certificates">
-          <ion-col>
-            <a [href]="certificate?.url" target="_blank">
-              <div class="card">
-                <ion-row class="ion-align-items-center ion-padding-horizontal ion-padding-top">
-                  <ion-col class="card-header">{{certificate?.certificateName}}</ion-col>
-                  <ion-col class="card-header-mild-text ion-margin-right" size="auto">{{certificate?.date}}</ion-col>
-                </ion-row>
-                <ion-row class="ion-align-items-center ion-padding-horizontal">
-                  <ion-col>
-                    <ion-row class="card-main-text">{{certificate?.company}}</ion-row>
-                    <ion-row class="card-sub-text">
-                     {{certificate?.description}}
-                    </ion-row>
-                  </ion-col>
-                  <ion-col size="auto">
-                    <img src="../../../assets/icon/hackerrank.svg" width="50px">
-                  </ion-col>
-                </ion-row>
-              </div>
-            </a>
-            
-          </ion-col>
-          
-         </ion-row>
-        </ng-container>
-        <ng-container *ngSwitchCase="'education'">
-          <ion-row class="ion-margin-vertical" *ngFor="let course of education">
+          <ion-row class="ion-margin-vertical" *ngFor="let certificate of certificates">
             <ion-col>
-              
+              <a [href]="certificate?.url" target="_blank">
                 <div class="card">
                   <ion-row class="ion-align-items-center ion-padding-horizontal ion-padding-top">
-                    <ion-col class="card-header">{{course?.courseName}}</ion-col>
-                    <ion-col class="card-header-mild-text ion-margin-right" size="auto">{{course?.period}}</ion-col>
+                    <ion-col class="card-header">{{certificate?.certificateName}}</ion-col>
+                    <ion-col class="card-header-mild-text ion-margin-right" size="auto">{{certificate?.date}}</ion-col>
                   </ion-row>
                   <ion-row class="ion-align-items-center ion-padding-horizontal">
                     <ion-col>
-                      <ion-row class="card-main-text">{{course?.college}}</ion-row>
+                      <ion-row class="card-main-text">{{certificate?.company}}</ion-row>
                       <ion-row class="card-sub-text">
-                       {{course?.grade}}
+                        {{certificate?.description}}
                       </ion-row>
                     </ion-col>
                     <ion-col size="auto">
-                      <img src="../../../assets/icon/collegeLogo.png" width="50px">
+                      <img src="../../../assets/icon/hackerrank.svg" width="50px">
                     </ion-col>
                   </ion-row>
                 </div>
-              
+              </a>
+
             </ion-col>
-            
-           </ion-row>
+
+          </ion-row>
+        </ng-container>
+        <ng-container *ngSwitchCase="'education'">
+          <ion-row class="ion-margin-vertical" *ngFor="let course of education;let i=index">
+            <ion-col>
+
+              <div class="card" [ngClass]="i%2==0?'even-card':'odd-card'">
+                <ion-row class="ion-align-items-center ion-padding-horizontal ion-padding-top">
+                  <ion-col class="card-header">{{course?.courseName}}</ion-col>
+                  <ion-col class="card-header-mild-text ion-margin-right" size="auto">{{course?.period}}</ion-col>
+                </ion-row>
+                <ion-row class="ion-align-items-center ion-padding-horizontal">
+                  <ion-col>
+                    <ion-row class="card-main-text">{{course?.college}}</ion-row>
+                    <ion-row class="card-sub-text">
+                      {{course?.grade}}
+                    </ion-row>
+                  </ion-col>
+                  <ion-col size="auto">
+                    <img src="../../../assets/icon/collegeLogo.png" width="50px">
+                  </ion-col>
+                </ion-row>
+              </div>
+
+            </ion-col>
+
+          </ion-row>
         </ng-container>
       </ng-container>
     </ion-col>
-  
+
   </ion-row>
 
 </ion-grid>
