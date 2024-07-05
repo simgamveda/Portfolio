@@ -56,7 +56,7 @@ export class ContactComponent implements OnInit {
     this.api
       .executePut({
         url: 'contacts.json',
-        body: { ...this.contactForm.value, conditions: this.terms },
+        body: { ...this.contactForm.value, conditions: this.terms.value },
       })
       .subscribe((data) => {
         this.submitted = true;

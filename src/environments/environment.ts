@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebaseURL:"https://login-1fe0f-default-rtdb.firebaseio.com/"
+  firebaseURL:"https://testing-9abf4-default-rtdb.firebaseio.com/"
 };
 
 /*
