@@ -52,11 +52,22 @@ ion-button
 img{
     max-width: none;
 }
-
+.custom-class
+{
+  background-color: red;
+  border-radius: 15px;
+}
 .error-toast{
   --background:var(--ion-color-danger);
 }
 
 .success-toast{
   --background:var(--ion-color-success);
+}
+
+@media screen and (max-width:600px) {
+  .ion-padding
+  {
+    padding: 5px;
+  }
 }
