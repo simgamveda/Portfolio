@@ -10,7 +10,7 @@
       <!-- <ion-row class="main-text-blue">Key Roles & Responsibilities</ion-row> -->
       <ion-row class="main-text-black">Key Roles & Responsibilities</ion-row>
       <ion-row class="sub-text">I have {{experianceYears}} years of experience as an Angular developer, building dynamic and responsive web applications. My expertise includes component creation, data management with services, reactive programming with RxJS, and API integration. I continuously stay updated with Angular best practices to deliver high-quality, scalable applications.</ion-row>
-      <ion-row class="experience-cards">
+      <ion-row class="experience-cards ion-justify-content-center">
         <div class="experience-card"  *ngFor="let card of experiences">
           <ion-row class="header ion-align-items-center">
             <ion-col size="auto" class="ion-no-padding "><img src="../../../assets/icon/{{card.img}}"></ion-col>
@@ -236,8 +236,11 @@
         </ion-col>
       </ion-row>
     </ion-col>
-    <ion-col size="auto">
-      <img src="../../../assets/icon/aboutIcon.svg">
+    <ion-col sizeMd="12" sizeSm="12" sizeXs="12" size="auto" sizeLg="auto" sizeXl="auto">
+      <ion-row class="ion-align-items-center ion-justify-content-center">
+
+        <img src="../../../assets/icon/aboutIcon.svg">
+      </ion-row>
     </ion-col>
   </ion-row>
 

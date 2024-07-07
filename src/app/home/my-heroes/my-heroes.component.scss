@@ -17,6 +17,10 @@
     font-weight: 700;
     line-height: 50px;
     /* 100% */
+    @media screen and (max-width:576px) {
+        font-size: 30px;
+        line-height: 35px;
+    }
 }
 
 .card {
