@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonCol } from '@ionic/angular';
+import { interval, timer } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,35 @@ import { IonCol } from '@ionic/angular';
 })
 export class HomePage {
   public open:boolean=false;
+  public name:string="V";
+  public index:number=1;
+  public increase:boolean=true;
+  public timer=interval(300);
+  public nameArray="Veda Prakash".split("");
   constructor(
     public router:Router
   ) {
+   this.timer.subscribe(()=>{
+    if(this.increase)
+    {
+      this.name=this.name+this.nameArray[this.index]
+      this.index++;
+    }
+    else
+    {
+      this.name=""+this.nameArray.slice(0,this.index-1).join("");
+      this.index--;
+    }
+    if(this.index==12)
+    {
+      this.increase=false;
+    }
+    if(this.index==1)
+    {
+      this.increase=true;
+    }
+    // this.name="Veda Prakash"
+   })
   }
 
   public openResume()

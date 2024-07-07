@@ -38,16 +38,6 @@
 .bold {
     font-weight: 700;
 }
-
-.buttons-group {
-    margin-top: 30px;
-}
-
-.inactive-button {
-    color: var(--ion-color-primary);
-    --border-width: 1px;
-}
-
 .skills-heading {
     color: #222;
     font-size: 20px;
@@ -56,6 +46,10 @@
     line-height: 30px;
     /* 150% */
 }
+.skills-heading + .success
+{
+    color: var(--ion-color-success) !important;
+}
 
 .bottom-div {
     border-radius: 10px;
@@ -63,31 +57,32 @@
     height: 17px;
     display: flex;
     width: 100%;
+    overflow: hidden;
 }
 
 .top-div {
     border-radius: 10px;
-    background: var(--ion-color-primary);
-
-}
-
-.top-div-60 {
+    overflow: hidden;
     animation: increaseWidth60 2s ease-in-out;
 }
-
+.success{
+    background: var(--ion-color-success);
+}
+.danger{
+    background: var(--ion-color-danger);
+}
+.warning{
+    background: var(--ion-color-warning);
+}
 @keyframes increaseWidth60 {
     0% {
         width: 0;
     }
-
-    100% {
-        width: 60%;
-    }
 }
 
-.top-div-80 {
-    animation: increaseWidth80 2s ease-in-out;
-}
+// .top-div-80 {
+//     animation: increaseWidth80 2s ease-in-out;
+// }
 
 @keyframes increaseWidth80 {
     0% {
@@ -95,13 +90,13 @@
     }
 
     100% {
-        width: 80%;
+        width: 100%;
     }
 }
 
-.top-div-70 {
-    animation: increaseWidth70 2s ease-in-out;
-}
+// .top-div-70 {
+//     animation: increaseWidth70 2s ease-in-out;
+// }
 
 @keyframes increaseWidth70 {
     0% {
@@ -113,45 +108,6 @@
     }
 }
 
-.card {
-    border-radius: 24px;
-    background: #FAFAFA;
-    border: 2px solid var(--ion-color-primary);
-}
-
-.card-header {
-    color: #333;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1.44px;
-}
-
-.card-header-mild-text {
-    color: rgba(102, 102, 102, 0.60);
-    text-align: right;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.card-main-text {
-    color: #000;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-}
-
-.card-sub-text {
-    color: #666;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
 a {
     text-decoration: none;
 }
@@ -161,4 +117,118 @@ a {
         height: 300px;
     }
 
+}
+.experience-cards
+{
+    gap: 24px;
+    margin: 15px 0px;
+    .experience-card{
+        width: 300px;
+        padding: 16px;
+        gap: 16px;
+        display: grid;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0px 1px 2px 0 rgba(16, 24, 40,0.1);
+        .header{
+            gap: 16px;
+            img{
+                width: 48px;
+                height: 48px;
+            }
+            .header-name
+            {
+                font-size: 16px;
+                font-weight: 700;
+            }
+        }
+        .role
+        {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1C1C57;
+        }
+        .dates
+        {
+            font-size: 16px;
+            font-weight: 400;
+            color: #1C1C57;
+        }
+        .description
+        {
+            font-size: 16px;
+            color: #3E3E70;
+        }
+    }
+}
+#experience
+{
+   background-color: #F6F8FF;
+}
+.sub-header-text
+{
+    text-transform: none !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+}
+.tab
+{
+    box-shadow: 0px 1px 2px 0 rgba(16, 24, 40,0.1);
+    padding: 15px;
+    border-radius: 20px;
+    width: auto;
+    .gap
+    {
+        gap: 8px;
+    }
+    img{
+        width: 38px;
+        height: 38px;
+    }
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+.current-tab
+{
+    border: 1.5px solid #4A3AFF;
+    color: #4A3AFF;
+}
+.gap-18
+{
+    gap: 18px;
+    margin-top: 15px;
+    // display: grid;
+}
+.card-border
+{
+    border: 0.5px solid rgba(16, 24, 40,0.1);
+    border-radius: 10px;
+    
+    .certificate-card
+    {
+        border-top: 0.5px solid rgba(16, 24, 40,0.1);
+    }
+    .no-border
+    {
+        border: none;
+    }
+    .certificate-header
+    {
+        font-size: 16px;
+        font-weight: bold;
+        color: #000 !important;
+    }
+    .certificate-main-text
+    {
+        font-size: 14px;
+        font-weight: 400;
+        color: #000 !important;
+    }
+    .certificate-sub-text
+    {
+        font-size: 14px;
+        font-weight: 400;
+        color: #00000099!important;
+    }
 }

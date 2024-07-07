@@ -14,8 +14,16 @@ export class AppComponent {
       url: 'home',
     },
     {
-      name: 'About Me',
-      url: 'about',
+      name: 'Experience',
+      url: 'experience',
+    },
+     {
+      name:"About Me",
+      url:'about'
+    },
+    {
+      name:"Projects",
+      url:'projects'
     },
     {
       name: 'My Heroes',
@@ -36,15 +44,9 @@ export class AppComponent {
   ];
   @ViewChild(IonMenu) public menu: any;
   constructor(private router: Router, private route: ActivatedRoute) {
-    // this.route.fragment.subscribe(fragment => {
-    //   if (fragment) {
-    //     const element = document.querySelector(`#${fragment}`);
-    //     if (element) {
-    //       element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-    //     }
-    //   }
-    // });
+   
   }
+
 
   public scrollToSection(item: any) {
     this.menu.close();
@@ -59,5 +61,22 @@ export class AppComponent {
         });
       }
     }
+  }
+
+  ngAfterViewInit()
+  {
+    this.route.fragment.subscribe(fragment => {
+      console.log(fragment)
+      if (fragment) {
+      
+        setTimeout(()=>{
+          const element = document.querySelector(`#${fragment}`);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+          }
+        })
+       
+      }
+    });
   }
 }

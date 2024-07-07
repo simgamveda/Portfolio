@@ -1,32 +1,38 @@
-<div style="width: 100%;overflow-y: scroll">
-  <ion-grid class="ion-padding" id="home">
-    <ion-row class="ion-padding ion-align-items-center ion-justify-content-center">
+<div style="width: 100%;">
+  <ion-grid class="ion-padding mobile-device-padding" id="home">
+    <ion-row class="ion-padding mobile-device-padding ion-align-items-center ion-justify-content-center">
       <ion-col class="ion-padding" sizeMd="12" sizeLg="6">
         <ion-row>
           <div class="welcome-text">Welcome to my Portfolio</div>
         </ion-row>
         <ion-row class="highlight-text">Hi I'm</ion-row>
-        <ion-row class="name-text">Veda Prakash</ion-row>
+        <ion-row class="name-text">{{name}}<div class="cursor"></div></ion-row>
         <ion-row class="highlight-text">Web Developer</ion-row>
         <ion-row class="sub-text">Crafting seamless digital experiences for a connected world. </ion-row>
         <ion-row class="ion-padding-top ion-justify-content-start ion-hide-md-down">
           <ion-col size="auto">
+            <ion-button color="primary" routerLink="/home" fragment="about">Know More</ion-button>
+          </ion-col>
+          <!-- <ion-col size="auto">
             <ion-button [color]="open?'danger':'primary'" (click)="openResume()">{{open?'Close
               Resume':'Resume'}}</ion-button>
           </ion-col>
           <ion-col size="auto">
             <ion-button class="download" fill="outline" (click)="download()">Download CV <ion-icon
                 name="download-outline"></ion-icon></ion-button>
-          </ion-col>
+          </ion-col> -->
         </ion-row>
         <ion-row class="ion-padding-top ion-justify-content-start ion-hide-md-up">
-          <ion-col size="12">
+          <!-- <ion-col size="12">
             <ion-button size="block" [color]="open?'danger':'primary'" (click)="openResume()">{{open?'Close
               Resume':'Resume'}}</ion-button>
           </ion-col>
           <ion-col size="12">
             <ion-button size="block" class="download" fill="outline" (click)="download()">Download CV <ion-icon
                 name="download-outline"></ion-icon></ion-button>
+          </ion-col> -->
+          <ion-col size="12">
+            <ion-button color="primary" size="block" routerLink="/home" fragment="about">Know More</ion-button>
           </ion-col>
         </ion-row>
 
@@ -43,10 +49,10 @@
   </ion-grid>
   <ng-container *ngIf="!open">
     <ion-grid class="ion-padding  technologies ion-align-items-center" id="icons">
-      <ion-row class="ion-padding ion-align-items-center ion-justify-content-center" style="gap: 100px;">
+      <ion-row class="ion-padding ion-align-items-center ion-justify-content-center">
         <ion-col size="auto" *ngFor="let index of [1,2,3,4]">
           <ion-row class="ion-justify-content-center">
-            <img src='../../assets/icon/logo-{{index}}.svg' height="110px" style="opacity: 0.5;">
+            <img src='../../assets/icon/logo-{{index}}.svg' class="language-icon">
           </ion-row>
           <ion-row class="ion-justify-content-center">
             <label *ngIf="index==1">Angular</label>
@@ -57,7 +63,8 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <app-about id="about"></app-about>
+    <app-about id="experience"></app-about>
+    <app-projects id="projects"></app-projects>
     <app-my-heroes id="heroes"></app-my-heroes>
     <app-contact id="contact"></app-contact>
     <app-footer></app-footer>

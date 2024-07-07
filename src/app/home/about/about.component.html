@@ -1,118 +1,244 @@
-<ion-grid class="ion-padding" id="about">
+<ion-grid class="ion-padding" id="experience">
   <ion-row class="ion-padding ion-align-items-center ion-justify-content-center">
     <ion-col class="ion-padding-start" style="display: flex;justify-content: center;">
       <!-- <div class="my-image"> -->
-      <img src="../../../assets/icon/aboutIcon.svg" width="535px" class="mobile-image">
+      <img src="../../../assets/icon/computer.svg" width="535px" class="mobile-image">
       <!-- </div> -->
     </ion-col>
     <ion-col class="ion-padding">
-      <ion-row class="header-sub-text">About Me</ion-row>
-      <ion-row class="main-text-blue">2+ Year's Experience</ion-row>
-      <ion-row class="main-text-black">on Web Development</ion-row>
-      <ion-row class="sub-text">Hello there! I'm Veda Prakash Simgam. I specialize in web development, and I'm deeply
-        passionate and committed to my craft. With 2+ years of experience as a Web Developer</ion-row>
-      <ion-row class="buttons-group">
-        <ion-col size="auto" *ngFor="let tab of tabs">
-          <ion-button [fill]="currentTab.value==tab.value?'solid':'outline'"
-            [ngClass]="{'inactive-button':currentTab.value!=tab.value}"
-            (click)="currentTab=tab">{{tab?.name}}</ion-button>
-        </ion-col>
-        <!-- <ion-col size="auto">
-          <ion-button fill="outline" class="inactive-button">Awards</ion-button>
-        </ion-col>
-        <ion-col size="auto">
-          <ion-button  fill="outline" class="inactive-button">Educations</ion-button>
-        </ion-col> -->
+      <ion-row class="header-sub-text">My Experience</ion-row>
+      <!-- <ion-row class="main-text-blue">Key Roles & Responsibilities</ion-row> -->
+      <ion-row class="main-text-black">Key Roles & Responsibilities</ion-row>
+      <ion-row class="sub-text">I have {{experianceYears}} years of experience as an Angular developer, building dynamic and responsive web applications. My expertise includes component creation, data management with services, reactive programming with RxJS, and API integration. I continuously stay updated with Angular best practices to deliver high-quality, scalable applications.</ion-row>
+      <ion-row class="experience-cards">
+        <div class="experience-card"  *ngFor="let card of experiences">
+          <ion-row class="header ion-align-items-center">
+            <ion-col size="auto" class="ion-no-padding "><img src="../../../assets/icon/{{card.img}}"></ion-col>
+            <ion-col class="header-name ion-no-padding ">{{card.name}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-no-padding">
+              <ion-row class="role">{{card?.role}}</ion-row>
+              <ion-row class="dates">{{months[card.fromDate.getMonth()]+"-"+card.fromDate.getFullYear()}} to {{card?.toDate?months[card.toDate.getMonth()]+"-"+card.toDate.getFullYear():"Present"}}</ion-row>
+              
+            </ion-col>
+          </ion-row>
+          <ion-row class="description">
+            {{card.description}}
+          </ion-row>
+        </div>
       </ion-row>
-      <ng-container [ngSwitch]="currentTab.value">
-        <ng-container *ngSwitchCase="'main-skills'">
-          <ion-row class="skills-heading ion-margin-top">
-            Web Development
-          </ion-row>
-          <ion-row class="ion-margin-vertical">
-            <div class="bottom-div">
-              <div class="top-div top-div-80" style="width: 80%;">
+      <ion-row>
 
-              </div>
-            </div>
-          </ion-row>
-          <ion-row class="skills-heading">
-            Angular Framework
-          </ion-row>
-          <ion-row class="ion-margin-vertical">
-            <div class="bottom-div">
-              <div class="top-div top-div-60" style="width: 60%;">
-
-              </div>
-            </div>
-          </ion-row>
-          <ion-row class="skills-heading">
-            Ionic Framework
-          </ion-row>
-          <ion-row class="ion-margin-vertical">
-            <div class="bottom-div">
-              <div class="top-div top-div-70" style="width: 70%;">
-
-              </div>
-            </div>
-          </ion-row>
-        </ng-container>
-        <ng-container *ngSwitchCase="'certificates'">
-          <ion-row class="ion-margin-vertical" *ngFor="let certificate of certificates">
-            <ion-col>
-              <a [href]="certificate?.url" target="_blank">
-                <div class="card">
-                  <ion-row class="ion-align-items-center ion-padding-horizontal ion-padding-top">
-                    <ion-col class="card-header">{{certificate?.certificateName}}</ion-col>
-                    <ion-col class="card-header-mild-text ion-margin-right" size="auto">{{certificate?.date}}</ion-col>
-                  </ion-row>
-                  <ion-row class="ion-align-items-center ion-padding-horizontal">
-                    <ion-col>
-                      <ion-row class="card-main-text">{{certificate?.company}}</ion-row>
-                      <ion-row class="card-sub-text">
-                        {{certificate?.description}}
-                      </ion-row>
-                    </ion-col>
-                    <ion-col size="auto">
-                      <img src="../../../assets/icon/hackerrank.svg" width="50px">
-                    </ion-col>
-                  </ion-row>
-                </div>
-              </a>
-
-            </ion-col>
-
-          </ion-row>
-        </ng-container>
-        <ng-container *ngSwitchCase="'education'">
-          <ion-row class="ion-margin-vertical" *ngFor="let course of education;let i=index">
-            <ion-col>
-
-              <div class="card" [ngClass]="i%2==0?'even-card':'odd-card'">
-                <ion-row class="ion-align-items-center ion-padding-horizontal ion-padding-top">
-                  <ion-col class="card-header">{{course?.courseName}}</ion-col>
-                  <ion-col class="card-header-mild-text ion-margin-right" size="auto">{{course?.period}}</ion-col>
-                </ion-row>
-                <ion-row class="ion-align-items-center ion-padding-horizontal">
-                  <ion-col>
-                    <ion-row class="card-main-text">{{course?.college}}</ion-row>
-                    <ion-row class="card-sub-text">
-                      {{course?.grade}}
-                    </ion-row>
-                  </ion-col>
-                  <ion-col size="auto">
-                    <img src="../../../assets/icon/collegeLogo.png" width="50px">
-                  </ion-col>
-                </ion-row>
-              </div>
-
-            </ion-col>
-
-          </ion-row>
-        </ng-container>
-      </ng-container>
+      </ion-row>
     </ion-col>
 
+  </ion-row>
+
+</ion-grid>
+<ion-grid class="ion-padding" id="about">
+  <ion-row class="ion-padding ion-align-items-center ion-justify-content-center">
+    <!-- <ion-col class="ion-padding-start" style="display: flex;justify-content: center;">
+      <img src="../../../assets/icon/computer.svg" width="535px" class="mobile-image">
+    </ion-col> -->
+    <ion-col class="ion-padding">
+      <ion-row class="header-sub-text">About Me</ion-row>
+      <!-- <ion-row class="main-text-blue">Key Roles & Responsibilities</ion-row> -->
+      <ion-row class="sub-header-text">Education, Skills and Certifications</ion-row>
+      <!-- <ion-row class="sub-text">I have {{experianceYears}} years of experience as an Angular developer, building dynamic and responsive web applications. My expertise includes component creation, data management with services, reactive programming with RxJS, and API integration. I continuously stay updated with Angular best practices to deliver high-quality, scalable applications.</ion-row>
+      <ion-row class="experience-cards">
+        <div class="experience-card"  *ngFor="let card of experiences">
+          <ion-row class="header ion-align-items-center">
+            <ion-col size="auto" class="ion-no-padding "><img src="../../../assets/icon/{{card.img}}"></ion-col>
+            <ion-col class="header-name ion-no-padding ">{{card.name}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-no-padding">
+              <ion-row class="role">{{card?.role}}</ion-row>
+              <ion-row class="dates">{{months[card.fromDate.getMonth()]+"-"+card.fromDate.getFullYear()}} to {{card?.toDate?months[card.toDate.getMonth()]+"-"+card.toDate.getFullYear():"Present"}}</ion-row>
+              
+            </ion-col>
+          </ion-row>
+          <ion-row class="description">
+            {{card.description}}
+          </ion-row>
+        </div>
+      </ion-row> -->
+      <ion-row class="gap-18">
+        <!-- <ion-col class="gap-28" size="auto"> -->
+          <div *ngFor="let tab of tabs" class="tab" [ngClass]="{'current-tab':tab.value==currentTab.value}" (click)="currentTab=tab">
+            <ion-row class="gap ion-align-items-center">
+              <ion-col size="auto" class="ion-no-padding">
+                <img src="../../../assets/icon/{{tab.img}}">
+              </ion-col>
+              <ion-col class="ion-no-padding">
+                {{tab.name}}
+              </ion-col>
+            </ion-row>
+          </div>
+        <!-- </ion-col> -->
+        
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ng-container [ngSwitch]="currentTab.value">
+            <ng-container *ngSwitchCase="'main-skills'">
+              <ion-row>
+                <ion-col>
+                  <ion-chip color="primary" *ngFor="let skill of skills">
+                    {{skill}}
+                  </ion-chip>
+                </ion-col>
+              </ion-row>
+            </ng-container>
+            <ng-container *ngSwitchCase="'certificates'">
+              <div class="card-border">
+                <ion-row *ngFor="let certificate of certificates;let first=first">
+                  <ion-col class="ion-no-padding">
+                    <a [href]="certificate?.url" target="_blank">
+                      <div class="certificate-card" [ngClass]="{'no-border':first}">
+                        <ion-row class="ion-align-items-center ion-padding-horizontal ion-padding-top">
+                          <ion-col class="certificate-header">{{certificate?.certificateName}}</ion-col>
+                          <ion-col class="certificate-header-mild-text ion-margin-right" size="auto">{{certificate?.date}}</ion-col>
+                        </ion-row>
+                        <ion-row class="ion-align-items-center ion-padding-horizontal">
+                          <ion-col>
+                            <ion-row class="certificate-main-text">{{certificate?.company}}</ion-row>
+                            <ion-row class="certificate-sub-text">
+                              {{certificate?.description}}
+                            </ion-row>
+                          </ion-col>
+                          <ion-col size="auto">
+                            <img src="../../../assets/icon/hackerrank.svg" width="50px">
+                          </ion-col>
+                        </ion-row>
+                      </div>
+                    </a>
+      
+                  </ion-col>
+      
+                </ion-row>
+              </div>
+              
+            </ng-container>
+            <ng-container *ngSwitchCase="'education'">
+              <div class="card-border">
+                <ion-row *ngFor="let course of education;let first=first">
+                  <ion-col>
+      
+                    <div class="certificate-card" [ngClass]="{'no-border':first}">
+                      <ion-row class="ion-align-items-center ion-padding-horizontal ion-padding-top">
+                        <ion-col class="certificate-header">{{course?.courseName}}</ion-col>
+                        <ion-col class="certificate-header-mild-text ion-margin-right" size="auto">{{course?.period}}</ion-col>
+                      </ion-row>
+                      <ion-row class="ion-align-items-center ion-padding-horizontal">
+                        <ion-col>
+                          <ion-row class="certificate-main-text">{{course?.college}}</ion-row>
+                          <ion-row class="certificate-sub-text">
+                            {{course?.grade}}
+                          </ion-row>
+                        </ion-col>
+                        <ion-col size="auto" *ngIf="course.img">
+                          <img src="../../../assets/icon/{{course.img}}" width="50px">
+                        </ion-col>
+                      </ion-row>
+                    </div>
+      
+                  </ion-col>
+      
+                </ion-row>
+              </div>
+              
+            </ng-container>
+            <ng-container *ngSwitchCase="'leetcode'">
+              <ion-row class="skills-heading ion-margin-top">
+               <ion-col>
+                Easy
+               </ion-col>
+               <ion-col size="auto" style="opacity: 0.5;">
+                {{leetcodeDetails.easySolved}}/{{leetcodeDetails.totalEasy}}
+               </ion-col>
+              </ion-row>
+              <ion-row class="ion-margin-vertical">
+                <div class="bottom-div">
+                  <div class="top-div success" [ngStyle]="{'width':(leetcodeDetails.easySolved/leetcodeDetails.totalEasy)*100+'%'}">
+    
+                  </div>
+                </div>
+              </ion-row>
+              <ion-row class="skills-heading ion-margin-top">
+                <ion-col>
+                 Medium
+                </ion-col>
+                <ion-col size="auto" style="opacity: 0.5;">
+                 {{leetcodeDetails.mediumSolved}}/{{leetcodeDetails.mediumSolved}}
+                </ion-col>
+               </ion-row>
+               <ion-row class="ion-margin-vertical">
+                 <div class="bottom-div">
+                   <div class="top-div warning" [ngStyle]="{'width':(leetcodeDetails.mediumSolved/leetcodeDetails.totalMedium)*100+'%'}">
+     
+                   </div>
+                 </div>
+               </ion-row>
+               <ion-row class="skills-heading ion-margin-top">
+                <ion-col>
+                 Hard
+                </ion-col>
+                <ion-col size="auto" style="opacity: 0.5;">
+                 {{leetcodeDetails.hardSolved}}/{{leetcodeDetails.totalHard}}
+                </ion-col>
+               </ion-row>
+               <ion-row class="ion-margin-vertical">
+                 <div class="bottom-div">
+                   <div class="top-div danger" [ngStyle]="{'width':(leetcodeDetails.hardSolved/leetcodeDetails.totalHard)*100+'%'}">
+     
+                   </div>
+                 </div>
+               </ion-row>
+              <!-- <ion-row class="skills-heading ion-margin-top">
+                Medium
+               </ion-row>
+               <ion-row class="ion-margin-vertical">
+                 <div class="bottom-div">
+                   <div class="top-div top-div-80" style="width: 40%;">
+     
+                   </div>
+                 </div>
+               </ion-row>
+               <ion-row class="skills-heading ion-margin-top">
+                Hard
+               </ion-row>
+               <ion-row class="ion-margin-vertical">
+                 <div class="bottom-div">
+                   <div class="top-div top-div-80" style="width: 80%;">
+     
+                   </div>
+                 </div>
+               </ion-row> -->
+              <!-- <ion-row>
+                <ion-col size="auto">
+                  <ion-text color="success">Easy</ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="auto">
+                  <ion-text color="warning">Medium</ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="auto">
+                  <ion-text color="danger">Hard</ion-text>
+                </ion-col>
+              </ion-row> -->
+            </ng-container>
+          </ng-container>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col size="auto">
+      <img src="../../../assets/icon/aboutIcon.svg">
+    </ion-col>
   </ion-row>
 
 </ion-grid>

@@ -31,7 +31,7 @@
         <!-- <div class="card"> -->
         <!-- <ion-scroll scrollX="true" style="white-space: nowrap;"> -->
         <div class="card" *ngFor="let data of heroesDetails" id="card_{{data.id}}"
-          [ngClass]="{'current-card':data.id==currentCard.id}">
+          [ngClass]="{'current-card':data.id==currentCard.id}" (click)="currentCard=data">
           <ion-row class="ion-align-items-center ion-justify-content-center">
             <ion-col size="auto">
               <div class="image-div">

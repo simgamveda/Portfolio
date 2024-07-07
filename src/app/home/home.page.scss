@@ -1,24 +1,22 @@
+#home{
+  // background-color: #d4d8e0;
+  background-color: #F6F8FF;
+}
 .my-image
 {
-  // border-radius: 300px;
-  // height: 560px;
-  // width: 560px;
   width: 100%;
   height: 100%;
-  // border: 1px solid #F2F2F2;
   display: flex;
   align-items: center;
   justify-content: center;
   img{
-    width: 530px;
+    width: 700px;
   }
   @media screen and (max-width:576px) {
     img{
       width: 100vw;
-    // height: 100%;
     }
   }
-  // background: url('../../assets/icon/profilePhoto.png'), lightgray 50% / cover no-repeat;
 }
 img{
   max-width: none;
@@ -30,6 +28,10 @@ img{
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  @media screen and (max-width:576px) {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 .highlight-text
 {
@@ -38,6 +40,10 @@ img{
   font-style: normal;
   font-weight: 700;
   line-height: 75px; /* 125% */
+  @media screen and (max-width:576px) {
+    font-size: 30px;
+    line-height: 40px;
+  }
 }
 .name-text
 {
@@ -46,6 +52,10 @@ img{
   font-style: normal;
   font-weight: 700;
   line-height: 75px;
+  @media screen and (max-width:576px) {
+    font-size: 40px;
+    line-height: 45px;
+  }
 }
 .sub-text
 {
@@ -54,11 +64,24 @@ img{
   font-style: normal;
   font-weight: 400;
   line-height: 35px; /* 140% */
+  @media screen and (max-width:576px) {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 .technologies
 {
-  background-color: #F8F8F8;
+  background-color: white;
   min-height: 180px;
+  >ion-row{
+    gap: 100px;
+  }
+  @media screen and (max-width:600px) {
+    min-height: auto;
+    >ion-row{
+      gap: 20px;
+    }
+  }
 }
 
 .download
@@ -71,5 +94,27 @@ img{
   .order-image
   {
     order: -1;
+  }
+}
+.cursor{
+  width: 5px;
+  background-color: #0666FF;
+  // height: 100%;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 100% {
+    background-color: transparent; /* White */
+  }
+  50% {
+    background-color: #0666FF; /* Blue */
+  }
+}
+.language-icon
+{
+  height:110px;
+  opacity: 0.5;
+  @media screen and (max-width:600px) {
+    height: 60px;
   }
 }

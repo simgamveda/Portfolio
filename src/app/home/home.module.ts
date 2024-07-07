@@ -11,6 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MyHeroesComponent } from './my-heroes/my-heroes.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { MyHeroesComponent } from './my-heroes/my-heroes.component';
     AboutComponent,
     ContactComponent,
     FooterComponent,
-    MyHeroesComponent
+    MyHeroesComponent,
+    ProjectsComponent
   ]
 })
 export class HomePageModule {}
