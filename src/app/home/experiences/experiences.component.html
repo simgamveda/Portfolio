@@ -1,0 +1,28 @@
+<ion-content class="experience-cards">
+  <ion-row class="ion-justify-content-end ion-hide-md-up">
+    <ion-col size="auto" class="ion-padding-horizontal" >
+    <ion-icon name="close-circle" size="large" style="cursor: pointer;" (click)="dismissModal()"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <div class="experience-card">
+    <ion-row class="header ion-align-items-center">
+      <ion-col size="auto" class="ion-no-padding "><img src="../../../assets/icon/{{data.img}}" width="20px"></ion-col>
+      <ion-col class="header-name ion-no-padding ">{{data.name}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <ion-row class="role">{{data?.role}}</ion-row>
+        <ion-row class="dates">{{months[data.fromDate.getMonth()]+"-"+data.fromDate.getFullYear()}} to {{data?.toDate?months[data.toDate.getMonth()]+"-"+data.toDate.getFullYear():"Present"}}</ion-row>
+        
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row class="description">
+      {{data.description}}
+    </ion-row> -->
+    <ion-row class="description">
+      <ul>
+        <li *ngFor="let des of data.responsibilities">{{des}}</li>
+      </ul>
+    </ion-row>
+  </div>
+</ion-content>

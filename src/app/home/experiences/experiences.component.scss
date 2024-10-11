@@ -1,0 +1,46 @@
+.experience-cards
+{
+    gap: 24px;
+    margin: 15px 0px;
+    .experience-card{
+        width: 100%;
+        padding: 16px;
+        gap: 16px;
+        display: grid;
+        // border-radius: 8px;
+        background-color: white;
+        // box-shadow: 0px 1px 2px 0 rgba(16, 24, 40,0.1);
+        .header{
+            gap: 16px;
+            img{
+                width: 48px;
+                height: 48px;
+            }
+            .header-name
+            {
+                font-size: 16px;
+                font-weight: 700;
+            }
+        }
+        .role
+        {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1C1C57;
+        }
+        .dates
+        {
+            font-size: 16px;
+            font-weight: 400;
+            color: #1C1C57;
+        }
+        .description
+        {
+            font-size: 16px;
+            color: #3E3E70;
+            ul{
+                padding-left: 15px;
+            }
+        }
+    }
+}

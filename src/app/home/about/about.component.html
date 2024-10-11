@@ -9,7 +9,14 @@
       <ion-row class="header-sub-text">My Experience</ion-row>
       <!-- <ion-row class="main-text-blue">Key Roles & Responsibilities</ion-row> -->
       <ion-row class="main-text-black">Key Roles & Responsibilities</ion-row>
-      <ion-row class="sub-text">I have {{experianceYears}} years of experience as an Angular developer, building dynamic and responsive web applications. My expertise includes component creation, data management with services, reactive programming with RxJS, and API integration. I continuously stay updated with Angular best practices to deliver high-quality, scalable applications.</ion-row>
+      <ion-row class="sub-text">
+        Innovative Frontend Developer with {{experianceYears}} years of experience in Angular and Ionic, specializing in crafting
+engaging UIs and implementing advanced communication features. Proven expertise in integrating payment
+systems like Stripe and Razorpay, developing Chrome Extensions, and utilizing microfrontend architecture.
+Adept at enhancing user experience and streamlining app functionality with cutting-edge technologies. Strong
+knowledge of Java and a keen interest in expanding full-stack development skills, focusing on backend
+technologies and Java-based frameworks to build scalable and robust applications.
+      </ion-row>
       <ion-row class="experience-cards ion-justify-content-center">
         <div class="experience-card"  *ngFor="let card of experiences">
           <ion-row class="header ion-align-items-center">
@@ -25,6 +32,9 @@
           </ion-row>
           <ion-row class="description">
             {{card.description}}
+          </ion-row>
+          <ion-row class="ion-justify-content-end">
+            <ion-col size="auto"><a class="clickable" (click)="showDetailsInModal($event,card)">more</a></ion-col>
           </ion-row>
         </div>
       </ion-row>
@@ -171,7 +181,7 @@
                  Medium
                 </ion-col>
                 <ion-col size="auto" style="opacity: 0.5;">
-                 {{leetcodeDetails.mediumSolved}}/{{leetcodeDetails.mediumSolved}}
+                 {{leetcodeDetails.mediumSolved}}/{{leetcodeDetails.totalMedium}}
                 </ion-col>
                </ion-row>
                <ion-row class="ion-margin-vertical">

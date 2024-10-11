@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MyHeroesComponent } from './my-heroes/my-heroes.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ExperiencesComponent } from './experiences/experiences.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { ProjectsComponent } from './projects/projects.component';
     ContactComponent,
     FooterComponent,
     MyHeroesComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ExperiencesComponent
   ]
 })
 export class HomePageModule {}
